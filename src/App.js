@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import './components/Ex01/ex01.css';
+import Titulo from './components/Ex01/titulo';
+import Texto from './components/Ex01/texto';
+import Soma from './components/Ex02/soma';
+import Button from './components/Ex06/botao';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Titulo/>
+      <Texto/>
+      <Soma numero1={1} numero2= {11}/>
+      <Button titulo="Qualquer outro texto" corLetra= "red" corBack= "yellow"/>
+
     </div>
   );
 }
