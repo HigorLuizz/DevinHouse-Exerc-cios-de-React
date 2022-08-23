@@ -7,8 +7,17 @@ import Children from './components/Ex01/children';
 import Post from './components/Ex07/post';
 import Contato from './components/Ex08/Contato';
 import ListadeContatos from './components/Ex08/ListaDeContatos';
+import Arquivos from './components/Ex10/RendCondicional';
+import Lista from './components/Desafio01/Lista';
+import Table from './components/Desafio01/Lista';
+import Tabela from './components/Desafio01/Tabela';
 
 function App() {
+  const listaNomes = [
+    {nome : "Higor", id: 1},
+    {nome : "Ana", id: 2},
+    {nome: "May", id:3}
+  ]
   return (
     <div className="App">
       {/* <Titulo/> 
@@ -25,6 +34,47 @@ function App() {
       imagemPost="https://receitinhas.com.br/wp-content/uploads/2022/06/cachorro-quente-tradicional-2.jpg" 
       comentarios="Comentado por Aline"/> */}
       <ListadeContatos/>
+      <Arquivos arquivos={listaNomes}/>
+      {/* <Lista lista={listaNomes}/> */}
+      <Table 
+        title="Lista de alunos"
+        description="Lista com dados pessoais dos alunos do curso de React"
+        columns={[
+          {
+            name: 'Nome',
+            prop: 'name'
+          },
+          {
+            name: 'Sobrenome',
+            prop: 'lastName'
+          },
+          {
+            name: 'Idade',
+            prop: 'age'
+          }
+        ]}
+        data={[
+          {
+            name: 'João',
+            lastName: 'Silva',
+            age: 20,
+            id: 1
+          },
+          {
+            name: 'Maria',
+            lastName: 'Souza',
+            age: 25,
+            id: 2
+          },
+          {
+            name: 'Pedro',
+            lastName: 'Oliveira',
+            age: 30,
+            id: 3
+          }
+        ]}
+      />
+      <Tabela/>
 
     </div>
   );
